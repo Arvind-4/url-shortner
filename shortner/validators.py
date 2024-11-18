@@ -13,6 +13,5 @@ def validate_url(value: str):
         url_validator(new_value)
     except:
         raise ValidationError("Invalid URL for this field")
-    print("new_value", new_value)
     return new_value
 
