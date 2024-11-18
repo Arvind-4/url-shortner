@@ -20,3 +20,13 @@ A simple URL shortener built using Django and PostgreSQL.
 2. copy the contents of `.env.docker` to `.env`.
 3. Install the requirements from `requirements.txt`.
 4. Run the dev server by the command `python manage.py runserver`
+
+## Try the api!
+
+```bash
+curl --location 'https://awesomeurlshortner.vercel.app/shorten/' \
+--header 'Content-Type: application/json' \
+--data '{
+    "url": "facebook.com"
+}'
+```
