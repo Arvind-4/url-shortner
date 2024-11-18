@@ -1,3 +1,4 @@
+static-cdn/
 __pycache__/
 *.py[oc]
 build/
