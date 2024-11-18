@@ -10,6 +10,8 @@ packaging==24.2
     # via gunicorn
 psycopg2-binary==2.9.10
     # via url-shortner (pyproject.toml)
+python-decouple==3.8
+    # via url-shortner (pyproject.toml)
 sqlparse==0.5.2
     # via django
 typing-extensions==4.12.2
