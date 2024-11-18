@@ -30,3 +30,9 @@ curl --location 'https://awesomeurlshortner.vercel.app/shorten/' \
     "url": "facebook.com"
 }'
 ```
+
+## Url Routes:
+
+- **`shorten/` (POST)**: Takes a URL in the request body, validates it, creates or retrieves a shortened URL, and returns the shortened URL in a JSON response.
+- **`metrics/` (GET)**: Returns a JSON response with the top 3 most common domains from all shortened URLs in the database.
+- **`<str:path>/` (GET)**: Takes a shortcode from the URL path, looks it up in the database, and redirects to the original URL associated with that shortcode.
