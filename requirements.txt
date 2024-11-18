@@ -2,19 +2,48 @@
 #    uv pip compile pyproject.toml -o requirements.txt
 asgiref==3.8.1
     # via django
+attrs==24.2.0
+    # via
+    #   jsonschema
+    #   referencing
 django==4.2.16
+    # via
+    #   url-shortner (pyproject.toml)
+    #   djangorestframework
+    #   drf-spectacular
+djangorestframework==3.15.2
+    # via drf-spectacular
+drf-spectacular==0.27.2
     # via url-shortner (pyproject.toml)
 gunicorn==23.0.0
     # via url-shortner (pyproject.toml)
+inflection==0.5.1
+    # via drf-spectacular
+jsonschema==4.23.0
+    # via drf-spectacular
+jsonschema-specifications==2024.10.1
+    # via jsonschema
 packaging==24.2
     # via gunicorn
 psycopg2-binary==2.9.10
     # via url-shortner (pyproject.toml)
 python-decouple==3.8
     # via url-shortner (pyproject.toml)
+pyyaml==6.0.2
+    # via drf-spectacular
+referencing==0.35.1
+    # via
+    #   jsonschema
+    #   jsonschema-specifications
+rpds-py==0.21.0
+    # via
+    #   jsonschema
+    #   referencing
 sqlparse==0.5.2
     # via django
 typing-extensions==4.12.2
     # via asgiref
+uritemplate==4.1.1
+    # via drf-spectacular
 whitenoise==6.8.2
     # via url-shortner (pyproject.toml)
