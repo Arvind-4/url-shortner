@@ -13,3 +13,10 @@ A simple URL shortener built using Django and PostgreSQL.
 
 1. Clone the repository
 2. Run `docker compose up --build` to start the application
+
+## Local Setup
+
+1. Clone the repo
+2. copy the contents of `.env.docker` to `.env`.
+3. Install the requirements from `requirements.txt`.
+4. Run the dev server by the command `python manage.py runserver`
