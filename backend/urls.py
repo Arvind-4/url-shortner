@@ -14,13 +14,17 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+from django.urls import path
 from django.contrib import admin
-from django.urls import path, include
-from shortner.views import shorten_url, redirect_to_original, get_metrics
+from shortner.views import ShortenURLView, RedirectToOriginalView, MetricsView
+from drf_spectacular.views import SpectacularAPIView, SpectacularRedocView, SpectacularSwaggerView
 
 urlpatterns = [
+    path('', SpectacularSwaggerView.as_view(url_name='schema'), name='swagger-ui'),
     path('admin/', admin.site.urls),
-    path("shorten/", shorten_url, name="shorten_url"),
-    path("metrics/", get_metrics, name="get_metrics"),
-    path("<str:path>/", redirect_to_original, name="redirect_to_original"),
+    path('api/schema/', SpectacularAPIView.as_view(), name='schema'),
+    path('api/schema/redoc/', SpectacularRedocView.as_view(url_name='schema'), name='redoc'),
+    path('api/shorten/', ShortenURLView.as_view(), name='shorten-url'),
+    path('api/metrics/', MetricsView.as_view(), name='get-metrics'),
+    path('<str:path>/', RedirectToOriginalView.as_view(), name='redirect-to-original'),
 ]
