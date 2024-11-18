@@ -1,0 +1,14 @@
+services:
+  db:
+    image: postgres:15.4
+    user: "1001:1001"
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=url-shortner
+    volumes:
+      - db-data:/var/lib/postgresql/data
+
+volumes:
+  db-data:
+    driver: local
