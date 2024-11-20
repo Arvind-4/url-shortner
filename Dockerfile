@@ -43,11 +43,10 @@ WORKDIR /app
 # Copy application code
 COPY . .
 
-# Collect static files (optional if using `collectstatic`)
-RUN python manage.py collectstatic --noinput
-
 # Expose the application port
 EXPOSE 8000
 
+RUN chmod +x /app/run.sh
+
 # Default command
-CMD ["gunicorn", "backend.wsgi:application", "--bind", "0.0.0.0:8000", "--workers", "3"]
+ENTRYPOINT ["/app/run.sh"]
